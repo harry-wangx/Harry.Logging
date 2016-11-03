@@ -25,7 +25,8 @@ namespace Harry.Logging
                 _loggers = new List<ILogger>(providers.Length);
                 for (var index = 0; index < providers.Length; index++)
                 {
-                    _loggers[index] = providers[index].CreateLogger(name);
+                    _loggers.Add( providers[index].CreateLogger(name));
+                    
                 }
             }
         }

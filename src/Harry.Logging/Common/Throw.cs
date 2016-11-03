@@ -12,7 +12,7 @@ namespace Harry.Logging.Common
         /// <param name="exceptions"></param>
         public static Exception MergeExceptions(IEnumerable<Exception> exceptions)
         {
-            StringBuilder sb = new StringBuilder(1024);
+            StringBuilder sb = new StringBuilder(512);
             foreach (var item in exceptions)
             {
                 sb.Append(item.Message

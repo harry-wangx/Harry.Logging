@@ -12,18 +12,18 @@
   },
 
   "title": "Harry.Logging.NLog",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "authors": [ "Harry" ],
   "description": "Harry.Logging.NLog",
 
   "dependencies": {
-    "Harry.Logging": "0.2.0"
+    "Harry.Logging": "0.3.0"
   },
 
   "frameworks": {
     "net20": {
       "frameworkAssemblies": {
-
+        "System.Xml": "2.0.0.0"
       },
       "dependencies": { "NLog": "2.1.0" }
     },
@@ -59,7 +59,7 @@
         "define": [ "ASYNC", "COREFX" ]
       },
       "dependencies": {
-        "NLog": "5.0.0-*"
+        "NLog":"5.0.0-beta02"
       }
     }
   }
