@@ -1,26 +1,32 @@
-﻿#if !NET20
+﻿
 using Harry.Logging.NLog;
 using NLog;
 using NLog.Config;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using _Nlog = NLog;
 
 namespace Harry.Logging
 {
     public static class NLogLoggerFactoryExtensions
     {
 
-        public static ILoggerFactory AddNLog(this ILoggerFactory factory, string configurationFilePath = null)
-        {
-            //ignore this
-#if COREFX
-            LogManager.AddHiddenAssembly(Assembly.Load(new AssemblyName("Microsoft.Extensions.Logging")));
-            LogManager.AddHiddenAssembly(Assembly.Load(new AssemblyName("Microsoft.Extensions.Logging.Abstractions")));
+        public static ILoggerFactory AddNLog(
+#if !NET20
+            this
 #endif
+            ILoggerFactory factory, string configurationFilePath = null)
+        {
+#if !NET20
+            //ignore this
+            _Nlog.LogManager.AddHiddenAssembly(Assembly.Load(new AssemblyName("Harry.Logging")));
 
-#if !NET20 && !NET35 && !NET40
-            LogManager.AddHiddenAssembly(typeof(NLogLoggerFactoryExtensions).GetTypeInfo().Assembly);
+    #if !NET20 && !NET35 && !NET40
+            _Nlog.LogManager.AddHiddenAssembly(typeof(NLogLoggerFactoryExtensions).GetTypeInfo().Assembly);
+    #else
+            _Nlog.LogManager.AddHiddenAssembly(Assembly.Load(new AssemblyName("Harry.Logging.NLog")));
+    #endif
 #endif
 
             using (var provider = new NLogLoggerProvider())
@@ -30,26 +36,6 @@ namespace Harry.Logging
             return factory;
         }
 
-        ///// <summary>
-        ///// Apply NLog configuration from XML config.
-        ///// </summary>
-        ///// <param name="env"></param>
-        ///// <param name="configFileRelativePath">relative path to NLog configuration file.</param>
-        //public static void ConfigureNLog(this IHostingEnvironment env, string configFileRelativePath)
-        //{
-        //    var fileName = Path.Combine(env.ContentRootPath, configFileRelativePath);
-        //    ConfigureNLog(fileName);
-        //}
 
-        /// <summary>
-        /// Apply NLog configuration from XML config.
-        /// </summary>
-        /// <param name="fileName">absolute path  NLog configuration file.</param>
-        private static void ConfigureNLog(string fileName)
-        {
-            LogManager.Configuration = new XmlLoggingConfiguration(fileName, true);
-        }
     }
 }
-
-#endif

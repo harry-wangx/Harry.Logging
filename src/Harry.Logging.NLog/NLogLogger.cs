@@ -73,21 +73,6 @@ namespace Harry.Logging.NLog
             }
         }
 
-
-//        public IDisposable BeginScope<TState>(TState state)
-//        {
-//            if (state == null)
-//            {
-//                throw new ArgumentNullException(nameof(state));
-//            }
-//#if NET20
-//            return _nullScope;
-//#else
-//            //TODO not working with async
-//            return NLog.NestedDiagnosticsContext.Push(state); 
-//#endif
-//        }
-
         public void Dispose()
         {
 
