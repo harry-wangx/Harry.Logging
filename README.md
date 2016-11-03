@@ -2,7 +2,9 @@ Harry.Logging
 =======
 
 **Package**: `Harry.Logging`  
-NuGet (`master`): [![](http://img.shields.io/nuget/v/Harry.Logging.svg?style=flat-square)](http://www.nuget.org/packages/Harry.Logging)[![](http://img.shields.io/nuget/dt/Harry.Logging.svg?style=flat-square)](http://www.nuget.org/packages/Harry.Logging)   
+NuGet (`master`): [![](http://img.shields.io/nuget/v/Harry.Logging.svg?style=flat-square)](http://www.nuget.org/packages/Harry.Logging)  
+**Package**: `Harry.Logging.Nlog`  
+NuGet (`master`): [![](http://img.shields.io/nuget/v/Harry.Logging.Nlog.svg?style=flat-square)](http://www.nuget.org/packages/Harry.Logging.Nlog)
 
 * Harry.Logging是一个日志组件,参考了微软的[Logging](https://github.com/aspnet/Logging "Logging").
 * 支持.net 2/3.5/4.0/4.5/net core
@@ -10,7 +12,7 @@ NuGet (`master`): [![](http://img.shields.io/nuget/v/Harry.Logging.svg?style=fla
 * 在最终的应用程序中,需要添加provider到`Harry.Logging`.
 
 ### Providers
-* ***Harry.Logging.NLog*** -负责将日志信息写到Nlog组件.
+* [***Harry.Logging.NLog***](https://github.com/harry-wangx/Harry.Logging/tree/master/src/Harry.Logging.NLog) -负责将日志信息写到Nlog组件.
 
 ### 示例代码
 ```c#
