@@ -12,12 +12,12 @@
   },
 
   "title": "Harry.Logging.NLog",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "authors": [ "Harry" ],
   "description": "Harry.Logging.NLog",
 
   "dependencies": {
-    "Harry.Logging": "0.3.0"
+    "Harry.Logging": "0.3.1"
   },
 
   "frameworks": {
