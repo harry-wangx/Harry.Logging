@@ -13,7 +13,7 @@ NuGet (`master`): [![](http://img.shields.io/nuget/v/Harry.Logging.Nlog.svg?styl
 
 ### Providers
 * [***Harry.Logging.NLog***](https://github.com/harry-wangx/Harry.Logging/tree/master/src/Harry.Logging.NLog) -负责将日志信息写到Nlog组件.
-* * [***Harry.Logging.Log4Net***](https://github.com/harry-wangx/Harry.Logging/tree/master/src/Harry.Logging.Log4Net) -负责将日志信息写到Log4Net组件.
+* [***Harry.Logging.Log4Net***](https://github.com/harry-wangx/Harry.Logging/tree/master/src/Harry.Logging.Log4Net) -负责将日志信息写到Log4Net组件.**目前log4net无net core版本**
 
 ### 示例代码
 ```c#
@@ -22,7 +22,6 @@ NuGet (`master`): [![](http://img.shields.io/nuget/v/Harry.Logging.Nlog.svg?styl
 
 			//以下代码放在需要记录日志的地方
             ILogger logger = LoggerFactory.Instance.CreateLogger("Program");
-
             logger.Debug("debug info");
 ```
 
