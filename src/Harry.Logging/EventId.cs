@@ -12,10 +12,20 @@ namespace Harry.Logging
         private readonly int _id;
         private readonly string _name;
 
-        public EventId(int id, string name = null)
+        public EventId(int id, string name)
         {
             _id = id;
             _name = name;
+        }
+
+        public EventId(string name) : this(0, name)
+        {
+
+        }
+
+        public EventId(int id) : this(id, null)
+        {
+
         }
 
         public int Id
@@ -36,43 +46,57 @@ namespace Harry.Logging
 
         public bool Equals(EventId other)
         {
-            return this.Id == other.Id;
+            if (this.Id != other.Id)
+            {
+                return false;
+            }
+            return this.Name == other.Name;
         }
 
         public override bool Equals(object obj)
         {
             if (obj == null)
                 return false;
-            if (GetType() != obj.GetType())
+
+            //使用is,性能优于使用GetType
+            //if (GetType() != obj.GetType())
+            //    return false;
+            if (!(obj is EventId))
+            {
                 return false;
-            return this.Id == ((EventId)obj).Id;
+            }
+            return this.Equals((EventId)obj);
         }
 
         public override int GetHashCode()
         {
-            return this.Id;
+            if (this.Name == null)
+            {
+                return this.Id;
+            }
+            int result = 17;
+            result = result * 37 + this.Id;
+            result = result * 37 + this.Name.GetHashCode();
+            return result;
         }
 
         public override string ToString()
         {
-            if (!string.IsNullOrEmpty(this.Name))
-            {
-                return this.Name;
-            }
-            else
+            if (this.Name == null)
             {
                 return this.Id.ToString();
             }
+            return $"[{this.Id}]{this.Name}";
         }
 
         public static bool operator ==(EventId left, EventId right)
         {
-            return left.Id == right.Id;
+            return left.Equals(right);
         }
 
         public static bool operator !=(EventId left, EventId right)
         {
-            return left.Id != right.Id;
+            return !left.Equals(right);
         }
 
         public static implicit operator EventId(int value)
