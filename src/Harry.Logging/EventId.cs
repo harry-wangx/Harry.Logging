@@ -53,20 +53,10 @@ namespace Harry.Logging
             return this.Name == other.Name;
         }
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            //使用is,性能优于使用GetType
-            //if (GetType() != obj.GetType())
-            //    return false;
-            if (!(obj is EventId))
-            {
-                return false;
-            }
-            return this.Equals((EventId)obj);
-        }
+        //使用is,性能优于使用GetType
+        //if (GetType() != obj.GetType())
+        //    return false;
+        public override bool Equals(object obj) => obj is EventId && Equals((EventId)obj);
 
         public override int GetHashCode()
         {
@@ -74,10 +64,13 @@ namespace Harry.Logging
             {
                 return this.Id;
             }
-            int result = 17;
-            result = result * 37 + this.Id;
-            result = result * 37 + this.Name.GetHashCode();
-            return result;
+            unchecked
+            {
+                int result = 17;
+                result = result * 37 + this.Id;
+                result = result * 37 + this.Name.GetHashCode();
+                return result;
+            }
         }
 
         public override string ToString()
