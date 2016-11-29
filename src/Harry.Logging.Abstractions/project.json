@@ -1,26 +1,24 @@
 ﻿{
   "packOptions": {
-    "summary": "Harry.Logging",
-    "tags": [ "log" ],
+    "summary": "Harry.Logging.Abstractions",
+    "tags": [ "logging" ],
     "owners": [ "Harry" ],
     "projectUrl": "https://github.com/harry-wangx/Harry.Logging",
-    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
     "repository": {
       "type": "git",
       "url": "https://github.com/harry-wangx/Harry.Logging"
     }
   },
-
-  "title": "Harry.Logging",
-  "version": "0.3.2",
+  "title": "Harry.Logging.Abstractions",
+  "version": "0.1.0",
   "authors": [ "Harry" ],
-  "description": "Harry.Logging",
+  "description": "Harry.Logging.Abstractions",
 
   "buildOptions": {
 
   },
   "dependencies": {
-    "Harry.Logging.Abstractions": "0.1.0"
+
   },
 
   "frameworks": {
