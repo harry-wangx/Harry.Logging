@@ -12,7 +12,7 @@
   },
 
   "title": "Harry.Logging",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "authors": [ "Harry" ],
   "description": "Harry.Logging",
 
@@ -20,7 +20,7 @@
 
   },
   "dependencies": {
-    "Harry.Logging.Abstractions": "0.1.0"
+    "Harry.Logging.Abstractions": "0.1.1"
   },
 
   "frameworks": {
@@ -56,13 +56,14 @@
         "define": [ "ASYNC", "COREFX" ]
       },
       "dependencies": {
-        "System.Collections": "4.0.11",
-        "System.Reflection": "4.1.0",
+        "System.Collections": "4.3.0",
+        //"System.Diagnostics.StackTrace": "4.3.0",
+        "System.Reflection": "4.3.0",
 
-        "System.Runtime": "4.1.0",
-        "System.Runtime.Extensions": "4.1.0",
-        "System.Runtime.InteropServices": "4.1.0",
-        "System.Threading": "4.0.11"
+        "System.Runtime": "4.3.0",
+        "System.Runtime.Extensions": "4.3.0",
+        "System.Runtime.InteropServices": "4.3.0",
+        "System.Threading": "4.3.0"
       }
     }
   }

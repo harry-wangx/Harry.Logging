@@ -1,5 +1,7 @@
-#if !NET20
 using System;
+#if !COREFX
+using System.Diagnostics;
+#endif
 
 namespace Harry.Logging
 {
@@ -9,7 +11,11 @@ namespace Harry.Logging
     public static class LoggerFactoryExtensions
     {
 
-        public static ILogger CreateLogger(this ILoggerFactory factory, Type type)
+        public static ILogger CreateLogger(
+#if !NET20
+            this
+#endif
+            ILoggerFactory factory, Type type)
         {
             if (factory == null)
             {
@@ -23,8 +29,19 @@ namespace Harry.Logging
 
             return factory.CreateLogger(Harry.Logging.Common.TypeNameHelper.GetTypeDisplayName(type));
         }
+
+#if !COREFX
+        public static ILogger GetCurrentClassLogger(
+#if !NET20
+            this
+#endif
+            ILoggerFactory factory)
+        {
+            var stackFrame = new StackFrame(1, false);
+            return CreateLogger(factory, stackFrame.GetMethod().DeclaringType);
+        }
+#endif
     }
 
 }
 
-#endif
