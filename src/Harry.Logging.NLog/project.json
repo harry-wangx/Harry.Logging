@@ -12,7 +12,7 @@
   },
 
   "title": "Harry.Logging.NLog",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "authors": [ "Harry" ],
   "description": "Harry.Logging.NLog",
 
@@ -32,7 +32,7 @@
         "System.Xml": "2.0.0.0"
       },
       "dependencies": {
-        "NLog":"4.3.10"
+        "NLog": "4.4.0"
       }
     },
     "net40": {
@@ -40,7 +40,7 @@
         "System.Xml": "4.0.0.0"
       },
       "dependencies": {
-        "NLog":"4.3.10"
+        "NLog": "4.4.0"
       }
     },
     "net45": {
@@ -51,7 +51,7 @@
         "System.Xml": "4.0.0.0"
       },
       "dependencies": {
-        "NLog": "4.3.10"
+        "NLog":"4.4.0"
       }
     },
     "netstandard1.3": {
