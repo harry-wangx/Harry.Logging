@@ -10,7 +10,7 @@
     }
   },
   "title": "Harry.Logging.Abstractions",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [ "Harry" ],
   "description": "Harry.Logging.Abstractions",
 
@@ -54,13 +54,7 @@
         "define": [ "ASYNC", "COREFX" ]
       },
       "dependencies": {
-        "System.Collections": "4.3.0",
-        "System.Reflection": "4.3.0",
-
-        "System.Runtime": "4.3.0",
-        "System.Runtime.Extensions": "4.3.0",
-        "System.Runtime.InteropServices": "4.3.0",
-        "System.Threading": "4.3.0"
+        "System.Runtime.InteropServices": "4.3.0"
       }
     }
   }

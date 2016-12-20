@@ -12,12 +12,12 @@
   },
 
   "title": "Harry.Logging.Log4Net",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [ "Harry" ],
   "description": "Harry.Logging.Log4Net",
 
   "dependencies": {
-    "Harry.Logging": "0.3.1"
+    "Harry.Logging": "0.3.4"
   },
 
   "frameworks": {

@@ -12,12 +12,12 @@
   },
 
   "title": "Harry.Logging.NLog",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "authors": [ "Harry" ],
   "description": "Harry.Logging.NLog",
 
   "dependencies": {
-    "Harry.Logging": "0.3.1"
+    "Harry.Logging": "0.3.4"
   },
 
   "frameworks": {
@@ -59,7 +59,7 @@
         "define": [ "ASYNC", "COREFX" ]
       },
       "dependencies": {
-        "NLog":"5.0.0-beta02"
+        "NLog": "5.0.0-beta03"
       }
     }
   }
